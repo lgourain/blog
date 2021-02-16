@@ -6,11 +6,12 @@ import SEO from "../components/seo"
 
 const BlogLink = styled(Link)`
   text-decoration: none;
+  color: black;
+  cursor: pointer;
 `
 
 const BlogTitle = styled.h3`
   margin-bottom: 20px;
-  color: blue;
 `
 
 export default ({ data }) => (
@@ -18,7 +19,7 @@ export default ({ data }) => (
     <SEO title="Home" />
     <div>
       <h1>Blog</h1>
-      <h4>{ data.allMarkdownRemark.totalCount }</h4>
+      <h4>{ data.allMarkdownRemark.totalCount } articles</h4>
       {
         data.allMarkdownRemark.edges.map(({node}) => (
           <div key={node.id}>
